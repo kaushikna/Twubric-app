@@ -1,0 +1,49 @@
+<div>
+    <app-date-filter (dateRangeSelected)="filterUsersByDate($event)"></app-date-filter>
+    <app-sort-buttons (sortCriteriaSelected)="sortUsers($event)"></app-sort-buttons>
+</div>
+
+<div class="box-main" *ngFor="let user of sortedUsers">
+    <div class="header">
+        <h2> {{ user.fullname}} </h2>
+
+        <p>
+            {{ user.twubric.total}}
+        </p>
+
+    </div>
+
+    <div class="table-body">
+        <div class="under-body">
+            <p>{{ user.twubric.friends}}</p>
+            <p>friends</p>
+
+
+        </div>
+
+        <div class="under-body">
+            <p>{{ user.twubric?.influence}}</p>
+            <p>influence</p>
+
+        </div>
+
+        <div class="under-body">
+            <p>{{ user.twubric?.chirpiness}}</p>
+            <p>chirpiness</p>
+
+        </div>
+
+    </div>
+
+    <div class="fotter">
+        <div>
+            <p>{{user.join_date | date:'MMM d, y' }}</p>
+        </div>
+        <div></div>
+        <div>
+            <button class="delete" (click)="removeUser(user.uid)">Remove</button>
+        </div>
+    </div>
+
+
+</div>
