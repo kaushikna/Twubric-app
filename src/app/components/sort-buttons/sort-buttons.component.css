@@ -1,0 +1,9 @@
+.sort-btn{
+    background-color: rgb(29, 29, 126);
+    padding: 10px 20px;
+    border: 0;
+    outline: none;
+    margin: 10px; 
+    color: #fff;
+    border-radius: 10px;
+}
